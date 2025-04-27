@@ -1,0 +1,405 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-transform: capitalize;
+}
+
+p {
+    margin: 0;
+}
+
+/* Navigation Tab CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    padding: 10px 50px;
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+#navlink {
+    opacity: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    transform: translateY(0px);
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    position: relative;
+    color: black;
+    transition: 0.3s ease;
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: orangered;
+    transition: width 0.3s ease;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+/* Menu Icon Transform */
+.menu-icon.active {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: whitesmoke;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: height 0.5s ease, opacity 0.5s ease;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    #nav-links li {
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Active Class for Animation */
+    #nav-links.show {
+        height: 280px;
+        opacity: 1;
+        z-index: 1;
+        text-align: center;
+    }
+
+    #nav-links.show li {
+        transform: translateY(0);
+    }
+}
+
+/* Search Flight Section */
+.flight {
+    background-color: rgb(202, 97, 59, 0.5);
+    color: black;
+    padding: 10px;
+}
+
+.flight select {
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: black;
+}
+
+.flight small {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flight a {
+    text-decoration: none;
+    color: gray;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 15px;
+}
+
+#flightForm {
+    margin: auto;
+    text-align: center;
+    padding: 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#flightForm input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1;
+    border: none;
+    outline: none;
+    min-width: 150px;
+}
+
+#flightForm input,
+.flight select {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#flightForm button {
+    padding: 10px 15px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#flightForm button:hover {
+    background-color: rgb(255, 127, 80, .7);
+}
+
+/* 
+@media (max-width: 600px) {
+
+    #flightForm input, #flightForm button {
+        width: 100%;
+    }
+} */
+
+@media (min-width: 850px) {
+    .description {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flight {
+        padding: 10px 20px
+    }
+}
+
+@media (min-width: 850px) {
+    .flight {
+        padding: 10px 60px
+    }
+}
+
+
+/* flight search css */
+.f-summary {
+    background-color: rgb(202, 97, 59, 0.5);
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.airplane-container {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.airplane-icon {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    animation: moveHorizontally 2s linear infinite;
+}
+
+.airplane-icon a {
+    font-size: 18px;
+}
+
+.airplane-icon i {
+    transform: rotate(90deg);
+    color: black;
+}
+
+@keyframes moveHorizontally {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: calc(100% - 0px);
+    }
+}
+
+.icon-item {
+    position: absolute;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 1px;
+    height: 50px;
+    background-color: black;
+}
+
+
+.travel-search {
+    max-width: 280px;
+    border-radius: 13px;
+    box-shadow: 1px 1px 11px #b7b7b7;
+    text-align: center;
+    display: flex;
+    background: rgb(255 255 255 / 70%);
+    flex-direction: column;
+    gap: 20px;
+    padding: 31px 0;
+}
+
+
+.index-search-details {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.airplane-container {
+    width: 9%;
+}
+
+.search-destination {
+    width: 70%;
+    line-height: 40px;
+}
+
+.search-information {
+    display: flex;
+    justify-content: center;
+    gap: 10px
+}
+
+.search-information p,
+.search-destination p {
+    font-size: 15px;
+}
+
+.search-information small,
+.search-destination small {
+    font-size: 13px;
+}
+
+.arrival {
+    border-left: 1px solid black;
+    padding: 0 10px;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs p {
+    font-size: 14px;
+}
+
+.tab {
+    flex: 1;
+    padding: 5px 0;
+    text-align: center;
+    background-color: rgb(202, 97, 59, 0.2);
+    color: #333;
+    transition: 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: rgb(202, 97, 59, 0.8);
+    color: black;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.content.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.booking-button {
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    border: none;
+    background: rgb(202, 97, 59, 0.9);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.booking-button:hover {
+    background-color: rgb(202, 97, 59, 0.5);
+    transform: translateY(-2px);
+}
+
+.booking-button:active {
+    transform: scale(0.98);
+}
