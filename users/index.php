@@ -311,6 +311,66 @@ marquee {
 }
 
 
+/* footer section */
+footer {
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+}
+.footer h1 {
+    margin: 0;
+    padding: 25px 45px;
+    color: white;
+}
+.footer {
+    background: #222;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0px 35px;
+}
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 250px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+}
+.footer-section ul li a:hover {
+    color: #fff;
+}
+.socials a {
+    color: #bbb;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.socials a:hover {
+    color: #fff;
+}
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #444;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 
 
 </style>
@@ -357,12 +417,12 @@ marquee {
             <p>search flights</p>
             <small>NB: All payment processed on this platform is a fake payment. for more understanding <button id="openModal">click here</button></small>
         </div>
-        <div class="payment-modal" id="paymentModal">
+        <!-- <div class="payment-modal" id="paymentModal">
             <div class="payment-modal-content">
                 <span id="closeModal">&times;</span>
                 <h1>King</h1>
             </div>
-        </div>
+        </div> -->
         <script src="javascript">
             var btn = document.getElementById("openModal")
             var modal = document.getElementById("paymentModal")
@@ -608,7 +668,44 @@ marquee {
         </div>
     </section>
 
+    <section class="footer">
+        <h1 style="font-size: 19px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">King's Air</h1>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section links">
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Customer Guarantee Policy</a></li>
+                    </ul>
+                </div>
 
+                <div class="footer-section about">
+                    <h2>Get the King's Air App</h2>
+                    <p>We provide quality services and products. Follow us on social media for updates.</p>
+                </div>
+                
+                <div id="ContactUs" class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> YourCompany. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </section>
 
 </body>
 </html>
